@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAVEN</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <nav class="cabecalho_menu">
+            <a class="cabecalho_menu_link" href="index.html">Home</a>
+            <a class="cabecalho_menu_link" href="./git.html">GIT</a>
+            <a class="cabecalho_menu_link" href="./maven.html">MAVEN</a>
+        </nav>
+    </header>
+    <main class="apresentacao">
+        <section class="apresentacao_conteudo">
+            <h1 class="apresentacao_conteudo_titulo">MAVEN</h1>
+            <h2 class="titulo-destaque">Instalação e Configuração do MAVEN</h2>
+            <p class="apresentacao_conteudo_texto">
+                <strong class="titulo-destaque">Instalação dos arquivos binários: </strong>
+                Acesse a página oficial do <a class="apresentacao_conteudo_texto_link" href="https://laven.apache.org/download/cgi">MAVEN</a> e faça o download dos
+                arquivos binários.<br>
+                <img src="" alt="">
+            </p>
+            <p class="apresentacao_conteudo_texto">
+                Após realizar o download dos arquivos, você deve descompactá-los em um local de sua preferência, é importante
+                frisar que o local onde você descompactar os arquivos, será o local onde o maven ficará instalado.<br>
+                <img src="" alt="">
+            </p>
+            <p class="apresentacao_conteudo_texto">
+                <strong class="titulo-destaque">Configuração de Variáveis de Ambiente:</strong>
+                Agora, vem a parte mais complicada do processo de instalação, é necessário colocar o local onde se encontra o 
+                script de execução do maven nas variavéis de ambiente.<br>
+                Para fazer isso, você pode pesquisar por <b>"Editar Variváeis de Ambiente do Sistema"</b> no menu iniciar e
+                então irá aparecer a seguinte janela:<br>
+                <img src="" alt="">
+            </p>
+            <p class="apresentacao_conteudo_texto">
+                Em seguida, clique na variável <b>"Path"</b> localiza na lista de <b>"Variavéis do Sistema"</b> e depois clique
+                no botão <b>"Editar"</b>. Em seguida, clique no botão <b>"Novo"</b> que está localizado na nova janela que abriu
+                e adicione o caminho da pasta bin do maven.
+                <img src="" alt=""><br>
+                Clique em <b>"OK"</b> para fechar a janela <b>"Editar Variáveis do Sistema"</b> e depois a mesma coisa para fechar
+                a janela <b>"Varivéis do Sistema"</b>.
+            </p>
+            <p class="apresentacao_conteudo_texto">
+                <strong class="titulo-destaque">Verificar Instalação do Maven:</strong>
+                Para Verificar se o maven foi instalado com sucesso, abra um terminal (PowerShell ou Prompt) e execute o comando
+                abaixo:<br>
+                <strong class="titulo-destaque">$ mvn --version</strong>
+            </p>
+            <p class="apresentacao_conteudo_texto">
+                Caso não ocorra nenhum erro, após a aexecução do comando, e retorne o que está na imagem a seguir, significa que o
+                processo de instalação do maven foi realizada com sucesso.
+                <img src="" alt="">
+            </p>
+            <h2 class="titulo-destaque">Gerenciamento de Dependências</h2>
+            <p class="apresentacao_conteudo_texto">
+                Para gerenciar as dependências do nosso projeto, utilizamos o arquivo pom.xml, nele colocamos as informações que o
+                nosso prjoeto necssita para funcionar e o maven se encarrega do download dessas bibliotecas, adicionando-as no
+                <b>Build Path/Classpath</b>.<br>
+                O maven irá buscar por essas dependências em locais chamados <b>"repositórios"</b>, exitem, basicamente, dois
+                repositórios, o <b>repositório local</b> que está localizado na pasta <b>".m2/repository"</b> (imagem abaixo) e o 
+                <b>repositório remoto</b> que está localizado no repositório público do maven.<br>
+                Ao adicionar uma nova dependência em nosso projeto, o maven, primeiro realiza a busca em nosso repositório loca,
+                caso não encontre, irá buscar no repositório remoto e então fazer download da biblioteca, depois disponibilizá-la
+                no repositório local. Dessa forma, caso você necessita utilizar a mesma biblioteca em outro prjoeto, não será
+                necessário realizar o downlaod novamente.<br>
+                <img src="" alt="">
+            </p>
+            <h2 class="titulo-destaque">Sobre o POM.XML</h2>
+            <p class="apresentacao_conteudo_texto">
+                Podemos dividir o arquivo <b>pom.xml</b> em quatro partes:
+            </p>
+            <p class="apresentacao_conteudo_texto">
+                <strong class="titulo-destaque">A primeira:</strong>
+                Possui as coordenadas do projeto, ou seja, os dados que identificam o projeto, como <b>groupId</b>, <b>artifactId</b>
+                e <b>version</b>.<br>
+                <strong class="titulo-destaque">
+                    < groupId>com.api< /groupId><br>
+                    < artifactId>parking-report< /artifactId><br>
+                    < version>0.0.1-SNAPSHOT< /version>
+                </strong>
+            </p>
+            <p class="apresentacao_conteudo_texto">
+                <strong class="titulo-destaque">A segunda:</strong>
+                Possui as <b>propriedades</b> do projeto, essa parte contém informações de <b>enconding</b> e a <b>versão</b>
+                que estamos utilizando.<br>
+                <strong class="titulo-destaque">
+                    < properties><br>
+                    < project.build.sourceEnconding>UTF-8< /project.build.sourceEnconding><br>
+                    < maven.compiler.source>1.7< /maven.compiler.source><br>
+                    < maven.compiler.target>1.7< /maven.compiler.target><br>
+                    < /properties>
+                </strong>
+            </p>
+            <p class="apresentacao_conteudo_texto">
+                <strong class="titulo-destaque">A terceira:</strong>
+                É onde definimos as dependencias de nosso projeto.<br>
+                <strong class="titulo-destaque">
+                    < dependencies><br>
+                    < dependency><br>
+                    < groupId>org.springframework.boot< /groupId><br>
+                    < artifactId>spring-boot-starter-validation< /artifactId><br>
+                    < /dependency><br>
+                    < /dependencies>
+                </strong>
+            </p>
+            <p class="apresentacao_conteudo_texto">
+                <strong class="titulo-destaque">A quarta:</strong>
+                Por úlitmo, temos as informações de build que dizem como o projeto deve ser compiulado pelo maven. Nessa parte,
+                também estão descritas quais plugins do maven o nosso projeto necessita para ser compilado.<br>
+                <strong class="titulo-destaque">
+                    < build><br>
+                    < plugins><br>
+                    < plugin><br>
+                    < groupId>org.springframework.boot< /groupId><br>
+                    < artifactId>spring-boot-maven-plugin< /artifactId><br>
+                    < /plugin><br>
+                    < /plugins><br>
+                    < /build>
+                </strong>
+            </p>
+            <h2 class="titulo-destaque"> Adicionando dependências no Projeto</h2>
+            <p class="apresentacao_conteudo_texto">
+                Para adicionarmos uma nova dependência em nosso projeto, basta que no arquivo <b>pom.xml</b>, dentro da tag
+                <b>dependencies</b>, adicionemos uma nova tag <b>dependency</b> com as informações de <b>groupId</b>, <b>artifactId</b>
+                e <b>version</b> da biblioteca que queremos adicionar como dependência.<br>
+                Digamos que vamos desenvolver uma aplicação que realiza requisitções HTTP para alguns serviço na web, então precisamos,
+                de alguma forma, realizar essas requisitções através do nosso código <b>JAVA</b>. Uma ótima forma de fazer isso, é por
+                meio da biblioteca <b>Apache HttpClient</b>. Então, para adicionarmos essa biblioteca como dependência em nosso projeto,
+                temos que adicionar suas informações no nosso arquivo <b>pom.xml</b>:
+                <strong class="titulo-destaque">
+                    < dependencies><br>
+                    < dependency><br>
+                    < groupId>org.apache.httpcomponents< /groupId><br>
+                    < artifactId>httpclient< /artifactId><br>
+                    < version>4.5.13< /version><br>
+                    < /dependency><br>
+                    < /dependencies>
+                </strong>
+            </p>
+            <p class="apresentacao_conteudo_texto">
+                Com isso, o maven irá realizar o download da biblioteca <b>Apache HttpClient</b> e adicioná-la em nosso
+                <b>Build Path/Classpath</b>. Dessa forma, já poderemos utilizá-la em nosso projeto sem mais nenhuma trabalho
+                adicional.
+            </p>
+        </section>
+    </main>
+    <footer class="rodape">
+        <p>Desenvolvido por Caio</p>
+    </footer>
+</body>
+
+</html>
