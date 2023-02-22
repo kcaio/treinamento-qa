@@ -111,8 +111,15 @@ body {
     background-color: var(--cor-hover);
 }
 
-.apresentacao_imagem {
+.apresentacao_imagem_home {
     width: 50%;
+}
+
+.apresentacao_imagem {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    padding: 2%;
 }
 
 .rodape {
