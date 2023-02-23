@@ -77,6 +77,10 @@ body {
     font-family: var(--fonte-secundaria);
 }
 
+.apresentacao_conteudo_codigo {
+    font-size: 1.0rem;
+}
+
 .apresentacao_links {
     display: flex;
     flex-direction: column;

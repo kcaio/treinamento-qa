@@ -52,13 +52,18 @@
                 <strong class="titulo-destaque">Verificar Instalação do Maven:</strong>
                 Para Verificar se o maven foi instalado com sucesso, abra um terminal (PowerShell ou Prompt) e execute o comando
                 abaixo:<br>
-                <strong class="titulo-destaque">$ mvn --version</strong>
+                <strong class="titulo-destaque">
+                    <code>
+                        $ mvn --version
+                    </code>
+                </strong>
             </p>
             <p class="apresentacao_conteudo_texto">
                 Caso não ocorra nenhum erro, após a aexecução do comando, e retorne o que está na imagem a seguir, significa que o
                 processo de instalação do maven foi realizada com sucesso.
                 <img class="apresentacao_imagem" src="assets/prompt_maven_versao.png" alt="">
             </p>
+            <hr>
             <h2 class="titulo-destaque">Gerenciamento de Dependências</h2>
             <p class="apresentacao_conteudo_texto">
                 Para gerenciar as dependências do nosso projeto, utilizamos o arquivo pom.xml, nele colocamos as informações que o
@@ -73,6 +78,7 @@
                 necessário realizar o downlaod novamente.<br>
                 <img class="apresentacao_imagem" src="assets/m2_repository.png" alt="Pasta .m2 com repositório local">
             </p>
+            <hr>
             <h2 class="titulo-destaque">Sobre o POM.XML</h2>
             <p class="apresentacao_conteudo_texto">
                 Podemos dividir o arquivo <b>pom.xml</b> em quatro partes:
@@ -82,9 +88,11 @@
                 Possui as coordenadas do projeto, ou seja, os dados que identificam o projeto, como <b>groupId</b>, <b>artifactId</b>
                 e <b>version</b>.<br>
                 <strong class="titulo-destaque">
-                    < groupId>com.api< /groupId><br>
-                    < artifactId>parking-report< /artifactId><br>
-                    < version>0.0.1-SNAPSHOT< /version>
+                    <code class="apresentacao_conteudo_codigo"><br>
+                        &lt;groupId&gt;com.api&lt;/groupId&gt;<br>
+                        &lt;artifactId&gt;parking-report&lt;/artifactId&gt;<br>
+                        &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+                    </code>
                 </strong>
             </p>
             <p class="apresentacao_conteudo_texto">
@@ -92,23 +100,27 @@
                 Possui as <b>propriedades</b> do projeto, essa parte contém informações de <b>enconding</b> e a <b>versão</b>
                 que estamos utilizando.<br>
                 <strong class="titulo-destaque">
-                    < properties><br>
-                    < project.build.sourceEnconding>UTF-8< /project.build.sourceEnconding><br>
-                    < maven.compiler.source>1.7< /maven.compiler.source><br>
-                    < maven.compiler.target>1.7< /maven.compiler.target><br>
-                    < /properties>
+                    <code class="apresentacao_conteudo_codigo"><br>
+                        &lt;properties&gt;<br>
+                        &nbsp;&nbsp;&lt;project.build.sourceEnconding&gt;UTF-8&lt;/project.build.sourceEnconding&gt;<br>
+                        &nbsp;&nbsp;&lt;maven.compiler.source&gt;1.7&lt;/maven.compiler.source&gt;<br>
+                        &nbsp;&nbsp;&lt;maven.compiler.target&gt;1.7&lt;/maven.compiler.target&gt;<br>
+                        &lt;/properties&gt;
+                    </code>
                 </strong>
             </p>
             <p class="apresentacao_conteudo_texto">
                 <strong class="titulo-destaque">A terceira:</strong>
                 É onde definimos as dependencias de nosso projeto.<br>
                 <strong class="titulo-destaque">
-                    < dependencies><br>
-                    < dependency><br>
-                    < groupId>org.springframework.boot< /groupId><br>
-                    < artifactId>spring-boot-starter-validation< /artifactId><br>
-                    < /dependency><br>
-                    < /dependencies>
+                    <code class="apresentacao_conteudo_codigo"><br>
+                        &lt;dependencies&gt;<br>
+                        &nbsp;&nbsp;&lt;dependency&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;artifactId&gt;spring-boot-starter-validation&lt;/artifactId&gt;<br>
+                        &nbsp;&nbsp;&lt;/dependency&gt;<br>
+                        &lt;dependencies&gt;
+                    </code>
                 </strong>
             </p>
             <p class="apresentacao_conteudo_texto">
@@ -116,16 +128,19 @@
                 Por úlitmo, temos as informações de build que dizem como o projeto deve ser compiulado pelo maven. Nessa parte,
                 também estão descritas quais plugins do maven o nosso projeto necessita para ser compilado.<br>
                 <strong class="titulo-destaque">
-                    < build><br>
-                    < plugins><br>
-                    < plugin><br>
-                    < groupId>org.springframework.boot< /groupId><br>
-                    < artifactId>spring-boot-maven-plugin< /artifactId><br>
-                    < /plugin><br>
-                    < /plugins><br>
-                    < /build>
+                    <code class="apresentacao_conteudo_codigo"><br>
+                        &lt;build&gt;<br>
+                        &nbsp;&nbsp;&lt;plugins&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;plugin&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/plugin&gt;<br>
+                        &nbsp;&nbsp;&lt;/plugins&gt;<br>
+                        &lt;/build&gt;
+                    </code>
                 </strong>
             </p>
+            <hr>
             <h2 class="titulo-destaque"> Adicionando dependências no Projeto</h2>
             <p class="apresentacao_conteudo_texto">
                 Para adicionarmos uma nova dependência em nosso projeto, basta que no arquivo <b>pom.xml</b>, dentro da tag
@@ -134,15 +149,17 @@
                 Digamos que vamos desenvolver uma aplicação que realiza requisitções HTTP para alguns serviço na web, então precisamos,
                 de alguma forma, realizar essas requisitções através do nosso código <b>JAVA</b>. Uma ótima forma de fazer isso, é por
                 meio da biblioteca <b>Apache HttpClient</b>. Então, para adicionarmos essa biblioteca como dependência em nosso projeto,
-                temos que adicionar suas informações no nosso arquivo <b>pom.xml</b>:
+                temos que adicionar suas informações no nosso arquivo <b>pom.xml</b>:<br>
                 <strong class="titulo-destaque">
-                    < dependencies><br>
-                    < dependency><br>
-                    < groupId>org.apache.httpcomponents< /groupId><br>
-                    < artifactId>httpclient< /artifactId><br>
-                    < version>4.5.13< /version><br>
-                    < /dependency><br>
-                    < /dependencies>
+                    <code class="apresentacao_conteudo_codigo"><br>
+                        &lt;dependencies&gt;<br>
+                        &nbsp;&nbsp;&lt;dependency&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;groupId&gt;org.apache.httpcomponents&lt;/groupId&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;artifactId&gt;httpclient&lt;/artifactId&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;version&gt;4.5.13&lt;/version&gt;<br>
+                        &nbsp;&nbsp;&lt;/dependency&gt;<br>
+                        &lt;/dependencies&gt;
+                    </code>
                 </strong>
             </p>
             <p class="apresentacao_conteudo_texto">
