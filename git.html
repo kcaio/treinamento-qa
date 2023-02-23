@@ -28,84 +28,146 @@
                 O objetivo principal de um branch é desenvolver novas funcionalidades, matendo-os isolados uns dos outros.<br>
                 O branch padrão em qualquer projeto é sempre o <strong>master branch</strong>. Tantos branches quanto necessários
                 podem ser criados e eventualmente mesclados ao master branch.<br>
-                Um novo branch pode ser criado usando o seguinte comando: <br>
-                <strong class="titulo-destaque">$ git checkout -b novo_branch</strong>
+                Um novo branch pode ser criado usando o seguinte comando: <br><br>
+                <strong class="titulo-destaque">
+                    <code class="apresentacao_conteudo_terminal">
+                        $ git checkout -b novo_branch
+                    </code>
+                </strong>
             </p>
             <p class="apresentacao_conteudo_texto">
-                Se você deseja retornar ao master branch, o seguinte comando pode ser usado:<br>
+                Se você deseja retornar ao master branch, o seguinte comando pode ser usado:<br><br>
                 <b>Alterar para a Master</b><br>
-                <strong class="titulo-destaque">$ git switch master</strong><br>
+                <strong class="titulo-destaque">
+                    <code class="apresentacao_conteudo_terminal">
+                        $ git switch master
+                    </code>
+                </strong><br><br>
                 <b>Alterar para o branch criado</b><br>
-                <strong class="titulo-destaque">$ git switch novo_branch</strong>
+                <strong class="titulo-destaque">
+                    <code class="apresentacao_conteudo_terminal">
+                        $ git switch novo_branch
+                    </code>
+                </strong>
             </p>
             <p class="apresentacao_conteudo_texto">
                 Para tornar o branch disponível para outros usuários, você terá que move-lô para o repositório remoto.<br>
-                Para fazer isso, use o seguinte comando: <br>
-                <strong class="titulo-destaque">$ git push origin novo_branch</strong>
+                Para fazer isso, use o seguinte comando: <br><br>
+                <strong class="titulo-destaque">
+                    <code class="apresentacao_conteudo_terminal">
+                        $ git push origin novo_branch
+                    </code>
+                </strong>
             </p>
             <p class="apresentacao_conteudo_texto">
-                Qualquer branch pode ser excluído usando o seguinte comando: <br>
+                Qualquer branch pode ser excluído usando o seguinte comando: <br><br>
                 <b>Excluir um brancho no repositório local: </b><br>
-                <strong class="titulo-destaque">$ git branch -D novo_branch</strong><br>
+                <strong class="titulo-destaque">
+                    <code class="apresentacao_conteudo_terminal">
+                        $ git branch -D novo_branch
+                    </code>
+                </strong><br><br>
                 <b>Excluir um brancho no repositório remoto: </b><br>
-                <strong class="titulo-destaque">$ git push origin --delete novo_branch</strong>
+                <strong class="titulo-destaque">
+                    <code class="apresentacao_conteudo_terminal">
+                        $ git push origin --delete novo_branch
+                    </code>
+                </strong>
             </p>
             <hr>
             <p class="apresentacao_conteudo_texto">
                 <strong class="titulo-destaque">ADD e COMMIT: </strong>
                 Alterações ou adições de arquivos propostas são adicionadas ao índice usando o comando add.<br>
-                Para adicionar qualquer arquivo, o comando é:<br>
+                Para adicionar qualquer arquivo, o comando é:<br><br>
                 <b>Quando houver um ou mais arquivos a serem adicionados e você queira especificar</b><br>
-                <strong class="titulo-destaque">$ git add arquivo.txt</strong><br>
+                <strong class="titulo-destaque">
+                    <code class="apresentacao_conteudo_terminal">
+                        $ git add arquivo.txt
+                    </code>
+                </strong><br><br>
                 <b>Quando você deseja adicionar todos os arquivos que estão naquela "árvore de trabalho"</b><br>
-                <strong class="titulo-destaque">$ git add .</strong><br>
+                <strong class="titulo-destaque">
+                    <code class="apresentacao_conteudo_terminal">
+                        $ git add .
+                    </code>
+                </strong><br>
             </p>
             <p class="apresentacao_conteudo_texto">
                 Se você está realmente confiante o suficiente para fazer essas mudanaças no HEAD, então você pode usar o comando 
-                commit:<br>
+                commit:<br><br>
                 <strong class="titulo-destaque">
-                    $ git commit -m "Adicionar uma mensagem padronizada (ou não) sobre alterações que foram feitas (ou desfeitas) 
-                    nesse commit"
+                    <code class="apresentacao_conteudo_terminal">
+                        $ git commit -m "Adicionar uma mensagem padronizada (ou não) sobre alterações que foram feitas (ou desfeitas) 
+                        nesse commit"
+                    </code>
                 </strong>
             </p>
             <hr>
             <p class="apresentacao_conteudo_texto">
                 <strong class="titulo-destaque">PULL, DIFF e MERGE: </strong>
                 Caso você queira atualizar seu diretório de trabalho local para o mais recente do repositório remoto, um simples 
-                comando pode ser usado:<br>
-                <strong class="titulo-destaque">$ git pull</strong>
+                comando pode ser usado:<br><br>
+                <strong class="titulo-destaque">
+                    <code class="apresentacao_conteudo_terminal">
+                        $ git pull
+                    </code>
+                </strong>
             </p>
             <p class="apresentacao_conteudo_texto">
-                Para mesclar outro branch (dar um merge) no atualmente ativo, use:<br>
-                <strong class="titulo-destaque">$ git merge novo_branch</strong>
+                Para mesclar outro branch (dar um merge) no atualmente ativo, use:<br><br>
+                <strong class="titulo-destaque">
+                    <code class="apresentacao_conteudo_terminal">
+                        $ git merge novo_branch
+                    </code>
+                </strong>
             </p>
             <p class="apresentacao_conteudo_texto">
                 Se você der um merge ou pull, o GIT sempre tenta lidar com os conflitos por conta própria, mas as vezes não consegue.<br>
                 Em caso de falha, devido a conflitos, o usuário tem que resolver os conflitos manualmente.<br>
-                Depois de editar os arquivos (para erradicar conflitos), marque-os como merged usando:<br>
-                <Strong class="titulo-destaque">$ git add arquivo.txt</Strong>
+                Depois de editar os arquivos (para erradicar conflitos), marque-os como merged usando:<br><br>
+                <Strong class="titulo-destaque">
+                    <code class="apresentacao_conteudo_terminal">
+                        $ git add arquivo.txt
+                    </code>
+                </Strong>
             </p>
             <p class="apresentacao_conteudo_texto">
-                Se antes do merge, você desejar visualizar as altearções, o seguinte comando pode ser executado:<br>
-                <strong class="titulo-destaque">$ git diff master novo_branch</strong>
+                Se antes do merge, você desejar visualizar as altearções, o seguinte comando pode ser executado:<br><br>
+                <strong class="titulo-destaque">
+                    <code class="apresentacao_conteudo_terminal">
+                        $ git diff master novo_branch
+                    </code>
+                </strong>
             </p>
             <hr>
             <p class="apresentacao_conteudo_texto">
                 <strong class="titulo-destaque">LOG, REVERT e CHECKOUT: </strong>
                 Se você acabou fazendo bagunça e precisa reverter as alterações feitas em qualquer arquivo, o git oferece diferentes
                 maneiras de tratar isso, veremos aqui uma delas.<br>
-                Exeute o comando para poder visualizar a lista de Logs da sua branch:<br>
-                <strong class="titulo-destaque">$ git log</strong><br>
+                Exeute o comando para poder visualizar a lista de Logs da sua branch:<br><br>
+                <strong class="titulo-destaque">
+                    <code class="apresentacao_conteudo_terminal">
+                        $ git log
+                    </code>
+                </strong><br>
                 Esse comando deverá retornar uma lista de commits realizados, algo como a imagem abaixo:<br>
-                <img>
+                <img src="assets/git_log.png" alt="Retorno de Log do repositório">
             </p>
             <p class="apresentacao_conteudo_texto">
-                Dessa forma, você poderá selecionar o hash do commit que você deseja que seu arquivo volte:<br>
-                <strong class="titulo-destaque">git rever *inserir hash*</strong>
+                Dessa forma, você poderá selecionar o hash do commit que você deseja que seu arquivo volte:<br><br>
+                <strong class="titulo-destaque">
+                    <code class="apresentacao_conteudo_terminal">
+                        git revert 91a3f0b70213a66e809f07048c3f5c5078b64fca
+                    </code>
+                </strong>
             </p>
             <p class="apresentacao_conteudo_texto">
-                Caso você queira só desfazer as alterações que ainda não foram commitadas, rode o comando:<br>
-                <strong class="titulo-destaque">$ git checkout -- arquivo.txt</strong><br>
+                Caso você queira só desfazer as alterações que ainda não foram commitadas, rode o comando:<br><br>
+                <strong class="titulo-destaque">
+                    <code class="apresentacao_conteudo_terminal">
+                        $ git checkout -- arquivo.txt
+                    </code>
+                </strong><br>
                 Isso substituirá as atlreações da árvore de trabalho pelos  últimos dados presentes no HEAD. Quaisuqer alterações que 
                 já tenham sido adicionados ao índice, não serão prejudicadas.
             </p>
@@ -114,13 +176,21 @@
             <p class="apresentacao_conteudo_texto">
                 <strong class="titulo-destaque-atencao">ATENÇÃO: </strong>
                 Lembre-se, antes de enviar as coisa para o repositório remoto, é necessário que você atualzie seu repositório local. 
-                Dessa forma, utilize o comando:<br>
-                <strong class="titulo-destaque">$ git pull</strong>
+                Dessa forma, utilize o comando:<br><br>
+                <strong class="titulo-destaque">
+                    <code class="apresentacao_conteudo_terminal">
+                        $ git pull
+                    </code>
+                </strong>
             </p>
             <p class="apresentacao_conteudo_texto">
                 Para poder enviar qualquer alteraçõa feita, o repositório local precisa estar atualizado com as úlitmas alterações 
-                enviadas para o repositório remoto:<br>
-                <strong class="titulo-destaque">$ git pushorigin novo_branch</strong>
+                enviadas para o repositório remoto:<br><br>
+                <strong class="titulo-destaque">
+                    <code class="apresentacao_conteudo_terminal">
+                        $ git pushorigin novo_branch
+                    </code>
+                </strong>
             </p>
         </section>
     </main>

@@ -81,6 +81,10 @@ body {
     font-size: 1.0rem;
 }
 
+.apresentacao_conteudo_terminal {
+    background-color: var(--cor-hover);
+}
+
 .apresentacao_links {
     display: flex;
     flex-direction: column;
